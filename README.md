@@ -1,4 +1,14 @@
-![image](https://user-images.githubusercontent.com/34389545/42423268-3a6ecb0a-82e7-11e8-9188-6f7aca8ff026.png)
+![image](https://shshab.weebly.com/uploads/2/2/7/7/22771692/editor/20150304070031-testflightnov2009-27km-small.jpeg?1488301207)
+-------------------------------
+
+
+
+#                                                         [  F.E.N.D. ]
+
+####                                      Flat Earth Network's Decentralized P2P Blockchain
+
+Distributing and utilizing a new anonymous digital currency [ FEND ] (Flat Earth Network Dividend) as part of a fully functioning secure payment & transaction processing platform; powered by the people - for the people, outside of bank and government control. Allowing the masses to properly [ FEND ] for ourselves, while helping others find TRUTH by removing the veil of deception.
+
 ### How To Compile
 
 On Linux or Mac on a non standard architecture, and can't get GNU Readline installed?
