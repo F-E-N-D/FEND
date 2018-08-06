@@ -8,7 +8,7 @@ BUILD_DIRECTORY=$2
 function usage()
 {
     echo "This script builds the dynamically and statically linked version"
-    echo "and generates the checksum files of the Athena tag provided."
+    echo "and generates the checksum files of the FEND tag provided."
     echo
     echo "USAGE: $0 <tag> <build-directory>"
     echo
@@ -71,7 +71,7 @@ function generate_tarball()
     tar --transform "s,^,$RELEASE_NAME/," -c -f $TARBALL -z -C "$CLONE_DIR/build/release/src" \
         solominer \
         wallet \
-        Athena \
+        FEND \
         services \
         legacy-services 
 
@@ -116,11 +116,11 @@ then
 fi
 
 # -- Config
-GITHUB_REPO="https://github.com/athena-network/athena.git"
-CLONE_DIR="$BUILD_DIRECTORY/athena-buildall"
-TARGET_DIR="$BUILD_DIRECTORY/athena-releases"
-DYNAMIC_RELEASE="athena-${TAG_VERSION}-linux-CLI"
-STATIC_RELEASE="athena-${TAG_VERSION}-linux-staticboost-CLI"
+GITHUB_REPO="https://github.com/F-E-N-D/FEND.git"
+CLONE_DIR="$BUILD_DIRECTORY/FEND-buildall"
+TARGET_DIR="$BUILD_DIRECTORY/FEND-releases"
+DYNAMIC_RELEASE="fend-${TAG_VERSION}-linux-CLI"
+STATIC_RELEASE="fend-${TAG_VERSION}-linux-staticboost-CLI"
 
 checkout_tag
 build_static_linked_version

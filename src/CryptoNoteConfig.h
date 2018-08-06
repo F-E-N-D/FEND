@@ -1,7 +1,8 @@
 // Copyright (c) 2012-2017, The CryptoNote developers, The Bytecoin developers
 // Copyright (c) 2014-2018, The Monero Project
 // Copyright (c) 2018, The TurtleCoin Developers
-// 
+// Copyright © 2018, Flat Earth Network Developers
+
 // Please see the included LICENSE file for more information.
 
 #pragma once
@@ -15,13 +16,13 @@
 namespace CryptoNote {
 namespace parameters {
 
-const uint64_t DIFFICULTY_TARGET                             = 3600; // seconds
+const uint64_t DIFFICULTY_TARGET                             = 90; // seconds
 
 const uint32_t CRYPTONOTE_MAX_BLOCK_NUMBER                   = 500000000;
 const size_t   CRYPTONOTE_MAX_BLOCK_BLOB_SIZE                = 500000000;
 const size_t   CRYPTONOTE_MAX_TX_SIZE                        = 1000000000;
-const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 6581243850;
-const uint32_t CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW          = 4;
+const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX       = 10082656;
+const uint32_t CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW          = 40;
 const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT            = 60 * 60 * 2;
 const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT_V3         = 3 * DIFFICULTY_TARGET;
 
@@ -29,29 +30,29 @@ const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW             = 60;
 const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW_V3          = 11;
 
 // MONEY_SUPPLY - total number coins to be generated
-const uint64_t MONEY_SUPPLY                                  = UINT64_C(2147483647);
+const uint64_t MONEY_SUPPLY                                  = UINT64_C(9000000000000);
 const uint32_t ZAWY_DIFFICULTY_BLOCK_INDEX                   = 0;
 const size_t ZAWY_DIFFICULTY_V2                              = 0;
 const uint8_t ZAWY_DIFFICULTY_DIFFICULTY_BLOCK_VERSION       = 3;
 
 const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX                 = 1;
-const uint64_t DIFFICULTY_WINDOW_V3                          = 60;
-const uint64_t DIFFICULTY_BLOCKS_COUNT_V3                    = DIFFICULTY_WINDOW_V3 + 1;
+const uint64_t DIFFICULTY_WINDOW_V3                          = 90;
+const uint64_t DIFFICULTY_BLOCKS_COUNT_V3 		     = DIFFICULTY_WINDOW_V3 + 1;
 
 const uint32_t MANDATORY_TRANSACTION                         = 2;
 
-const uint64_t MANDATORY_TRANSACTION_HEIGHT                  = 320;
+const uint64_t MANDATORY_TRANSACTION_HEIGHT                  = 90000000;
 
-const unsigned EMISSION_SPEED_FACTOR                         = 9;
-const unsigned EMISSION_SPEED_FACTOR_V2                      = 18;
+const unsigned EMISSION_SPEED_FACTOR                         = 21;
+const unsigned EMISSION_SPEED_FACTOR_V2                      = 21;
 
 static_assert(EMISSION_SPEED_FACTOR <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 static_assert(EMISSION_SPEED_FACTOR_V2 <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR");
 
-const uint64_t SLOWER_EMISSION_HEIGHT                        = 320;
+const uint64_t SLOWER_EMISSION_HEIGHT                        = 90000000;
 
 /* Premine amount */
-const uint64_t GENESIS_BLOCK_REWARD                          = UINT64_C(214748364);
+const uint64_t GENESIS_BLOCK_REWARD                          = UINT64_C(0);
 
 /* How to generate a premine:
 
@@ -73,36 +74,36 @@ bl;ock 300
 * You should see your premine appear in the previously generated wallet.
 
 */
-const char     GENESIS_COINBASE_TX_HEX[]                     = "010401ff0001cc99b366024ae8c3dc5675995688f3c7081e4c0179a000c884964f7c3f5cd80d54e207515a2101603335dbc9f1578c1e23095187e50cf74b3767c7215300e338f416d0c9e2853e";
+const char     GENESIS_COINBASE_TX_HEX[]                     = "012801ff0001cef78502029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121016859ef32222075687eae9fdcbce093e06a64fd64690101c0e5129b52e96f6487";
 
 const size_t   CRYPTONOTE_REWARD_BLOCKS_WINDOW               = 100;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE     = 100000; //size of block (bytes) after which reward for block calculated using block size
-const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V2  = 20000;
+const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V2  = 1000000;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_V1  = 10000;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE_CURRENT = CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE;
 const size_t   CRYPTONOTE_COINBASE_BLOB_RESERVED_SIZE        = 600;
-const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 2;
-const uint64_t MINIMUM_FEE                                   = UINT64_C(10000);
+const size_t   CRYPTONOTE_DISPLAY_DECIMAL_POINT              = 3;
+const uint64_t MINIMUM_FEE                                   = UINT64_C(300);
 
-const uint64_t MINIMUM_MIXIN_V1                              = 0;
-const uint64_t MAXIMUM_MIXIN_V1                              = 3;
-const uint64_t MINIMUM_MIXIN_V2                              = 3;
-const uint64_t MAXIMUM_MIXIN_V2                              = 3;
+const uint64_t MINIMUM_MIXIN_V1                              = 1;
+const uint64_t MAXIMUM_MIXIN_V1                              = 40;
+const uint64_t MINIMUM_MIXIN_V2                              = 1;
+const uint64_t MAXIMUM_MIXIN_V2                              = 90;
 
 const uint32_t MIXIN_LIMITS_V1_HEIGHT                        = 0;
-const uint32_t MIXIN_LIMITS_V2_HEIGHT                        = 1;
+const uint32_t MIXIN_LIMITS_V2_HEIGHT                        = 90000000;
 
-const uint64_t DEFAULT_MIXIN                                 = MINIMUM_MIXIN_V2;
+const uint64_t DEFAULT_MIXIN                                 = MINIMUM_MIXIN_V1;
 
 const uint64_t DEFAULT_DUST_THRESHOLD                        = UINT64_C(0);
 const uint64_t DEFAULT_DUST_THRESHOLD_V2                     = UINT64_C(0);
 
-const uint32_t DUST_THRESHOLD_V2_HEIGHT                      = MIXIN_LIMITS_V2_HEIGHT;
+const uint32_t DUST_THRESHOLD_V2_HEIGHT                      = 90000000;
 
 const uint64_t EXPECTED_NUMBER_OF_BLOCKS_PER_DAY             = 24 * 60 * 60 / DIFFICULTY_TARGET;
 const size_t   DIFFICULTY_WINDOW                             = 17;
-const size_t   DIFFICULTY_WINDOW_V1                          = 2880;
-const size_t   DIFFICULTY_WINDOW_V2                          = 2880;
+const size_t   DIFFICULTY_WINDOW_V1                          = 90;
+const size_t   DIFFICULTY_WINDOW_V2                          = 90;
 const size_t   DIFFICULTY_CUT                                = 0;  // timestamps to cut after sorting
 const size_t   DIFFICULTY_CUT_V1                             = 60;
 const size_t   DIFFICULTY_CUT_V2                             = 60;
@@ -139,14 +140,7 @@ static_assert(0 < UPGRADE_VOTING_THRESHOLD && UPGRADE_VOTING_THRESHOLD <= 100, "
 static_assert(UPGRADE_VOTING_WINDOW > 1, "Bad UPGRADE_VOTING_WINDOW");
 
 /* Block heights we are going to have hard forks at */
-const uint64_t FORK_HEIGHTS[] =
-{
-    320,
-    4392,
-    8684,
-    13176,
-    17568
-};
+const uint64_t FORK_HEIGHTS[] = {};
 
 const uint64_t FORK_HEIGHTS_SIZE = sizeof(FORK_HEIGHTS) / sizeof(*FORK_HEIGHTS);
 
@@ -162,14 +156,14 @@ static_assert(CURRENT_FORK_INDEX >= 0, "CURRENT FORK INDEX must be >= 0");
 /* Make sure CURRENT_FORK_INDEX is a valid index, unless FORK_HEIGHTS is empty */
 static_assert(FORK_HEIGHTS_SIZE == 0 || CURRENT_FORK_INDEX < FORK_HEIGHTS_SIZE, "CURRENT_FORK_INDEX out of range of FORK_HEIGHTS!");
 
-const char     CRYPTONOTE_BLOCKS_FILENAME[]                  = "athena-blockchain.bin";
-const char     CRYPTONOTE_BLOCKINDEXES_FILENAME[]            = "athena-blockindexes.bin";
-const char     CRYPTONOTE_POOLDATA_FILENAME[]                = "athena-poolstate.bin";
-const char     P2P_NET_DATA_FILENAME[]                       = "athena-p2pstate.bin";
-const char     MINER_CONFIG_FILE_NAME[]                      = "athena-miner_conf.json";
+const char     CRYPTONOTE_BLOCKS_FILENAME[]                  = "fend-blockchain.bin";
+const char     CRYPTONOTE_BLOCKINDEXES_FILENAME[]            = "fend-blockindexes.bin";
+const char     CRYPTONOTE_POOLDATA_FILENAME[]                = "fend-poolstate.bin";
+const char     P2P_NET_DATA_FILENAME[]                       = "fend-p2pstate.bin";
+const char     MINER_CONFIG_FILE_NAME[]                      = "fend-miner_conf.json";
 } // parameters
 
-const char     CRYPTONOTE_NAME[]                             = "Athena";
+const char     CRYPTONOTE_NAME[]                             = "fend";
 
 const uint8_t  TRANSACTION_VERSION_1                         =  1;
 const uint8_t  TRANSACTION_VERSION_2                         =  2;
@@ -185,8 +179,8 @@ const size_t   BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT        =  10000;  //by def
 const size_t   BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            =  1000;    //by default, blocks count in blocks downloading
 const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT         =  1000;
 
-const int      P2P_DEFAULT_PORT                              =  12000;
-const int      RPC_DEFAULT_PORT                              =  12001;
+const int      P2P_DEFAULT_PORT                              =  11630; //1Chron
+const int      RPC_DEFAULT_PORT                              =  16848; //GnMw
 
 const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT                =  1000;
 const size_t   P2P_LOCAL_GRAY_PEERLIST_LIMIT                 =  5000;
@@ -205,12 +199,11 @@ const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "";
 
 const static boost::uuids::uuid CRYPTONOTE_NETWORK =
 {
-    {  0x00, 0x11, 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88, 0x99, 0xaa, 0xbb, 0xcc, 0xdd, 0xee, 0xf0  }
+    {  0x74, 0x68, 0x65, 0x45, 0x61, 0x72, 0x74, 0x68, 0x69, 0x73, 0x46, 0x4c, 0x41, 0x54  }
 };
 
 const char* const SEED_NODES[] = {
-  "51.15.142.102:12000", //athena-0
-  "51.15.137.77:12000",  //athena-1
-  "165.227.252.132:12000" //community node
+    "142.93.5.157:11630", 
+    "104.236.0.16:11630"
 };
 }

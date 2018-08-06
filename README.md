@@ -1,5 +1,13 @@
-![image](https://user-images.githubusercontent.com/34389545/42423268-3a6ecb0a-82e7-11e8-9188-6f7aca8ff026.png)
-The CryptoNote Settlement Network
+![image](https://shshab.weebly.com/uploads/2/2/7/7/22771692/editor/20150304070031-testflightnov2009-27km-small.jpeg?1488301207)
+-------------------------------
+
+
+
+#                                                         [  F.E.N.D. ]
+
+####                                      Flat Earth Network's Decentralized P2P Blockchain
+
+Distributing and utilizing a new anonymous digital currency [ FEND ] (Flat Earth Network Dividend) as part of a fully functioning secure payment & transaction processing platform; powered by the people - for the people, outside of bank and government control. Allowing the masses to properly [ FEND ] for ourselves, while helping others find TRUTH by removing the veil of deception.
 
 ### How To Compile
 
@@ -19,8 +27,8 @@ Disable it with `cmake .. -DFORCE_READLINE=FALSE`
 
 ##### Building
 
-- `git clone https://github.com/athena-network/athena`
-- `cd athena`
+- `git clone https://github.com/F-E-N-D/FEND`
+- `cd FEND`
 - `mkdir build && cd $_`
 - `cmake ..`
 - `make`
@@ -36,8 +44,8 @@ Disable it with `cmake .. -DFORCE_READLINE=FALSE`
 
 ##### Building
 
-- `git clone https://github.com/athena-network/athena`
-- `cd athena`
+- `git clone https://github.com/F-E-N-D/FEND`
+- `cd FEND`
 - `mkdir build && cd $_`
 - `cmake ..` or `cmake -DBOOST_ROOT=<path_to_boost_install> ..` when building
   from a specific boost install. If you used brew to install boost, your path is most likely `/usr/local/include/boost.`
@@ -45,7 +53,7 @@ Disable it with `cmake .. -DFORCE_READLINE=FALSE`
 
 The binaries will be in `./src` after compilation is complete.
 
-Run `./src/athena` to connect to the network and let it sync (it may take a while).
+Run `./src/FENDd` to connect to the network and let it sync (it may take a while).
 
 #### Windows 10
 
@@ -57,16 +65,16 @@ Run `./src/athena` to connect to the network and let it sync (it may take a whil
 ##### Building
 
 - From the start menu, open 'x64 Native Tools Command Prompt for vs2017'.
-- `cd <your_athena_directory>`
+- `cd <your_fend_directory>`
 - `mkdir build`
 - `cd build`
 - Set the PATH variable for cmake: ie. `set PATH="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin";%PATH%`
 - `cmake -G "Visual Studio 14 Win64" .. -DBOOST_ROOT=C:/local/boost_1_59_0` (Or your boost installed dir.)
-- `MSBuild Athena.sln /p:Configuration=Release /m`
+- `MSBuild FEND.sln /p:Configuration=Release /m`
 - If all went well, it will complete successfully, and you will find all your binaries in the '..\build\src\Release' directory.
 - Additionally, a `.sln` file will have been created in the `build` directory. If you wish to open the project in Visual Studio with this, you can.
 
-#### Thanks
+#### Thanks to
 Cryptonote Developers, Bytecoin Developers, Monero Developers, Forknote Project, TurtleCoin Community
 
 ### Copypasta for license when editing files
@@ -78,6 +86,7 @@ Hi Athena contributor, thanks for forking and sending back Pull Requests. Extens
 // Copyright (c) 2014-2018, The Monero Project
 // Copyright (c) 2018, The TurtleCoin Developers
 // Copyright (c) 2018, The Athena Developers
-// 
+// Copyright (c) 2018, Flat Earth Network Developers
+
 // Please see the included LICENSE file for more information.
 ```

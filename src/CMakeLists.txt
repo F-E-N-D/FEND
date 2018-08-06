@@ -119,7 +119,7 @@ add_dependencies(PoolWallet version)
 add_dependencies(P2P version)
 
 # Finally build the binaries
-set_property(TARGET Daemon PROPERTY OUTPUT_NAME "Athena")
+set_property(TARGET Daemon PROPERTY OUTPUT_NAME "FENDd")
 set_property(TARGET zedwallet PROPERTY OUTPUT_NAME "zedwallet")
 set_property(TARGET PaymentGateService PROPERTY OUTPUT_NAME "services")
 set_property(TARGET PoolWallet PROPERTY OUTPUT_NAME "legacy-services")

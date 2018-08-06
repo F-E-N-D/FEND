@@ -229,21 +229,27 @@ int main(int argc, char* argv[])
     // configure logging
     logManager.configure(buildLoggerConfiguration(cfgLogLevel, cfgLogFile));
 
-    logger(INFO, BRIGHT_MAGENTA) <<
+    logger(INFO, BRIGHT_RED) <<
 
-      "\n                                                           \n"
-      "\n                                                           \n"
-      "                _/      _/                                   \n"
-      "     _/_/_/  _/_/_/_/  _/_/_/      _/_/    _/_/_/      _/_/_/\n"
-      "  _/    _/    _/      _/    _/  _/_/_/_/  _/    _/  _/    _/ \n"
-      " _/    _/    _/      _/    _/  _/        _/    _/  _/    _/  \n"
-      "  _/_/_/      _/_/  _/    _/    _/_/_/  _/    _/    _/_/_/   \n"
-      "\n                                                           \n"
-      "\n                                                           \n"
+      
+      "\n                                                 \n"
+      "*********************************************************************\n"
+      "		 	                                  \n"
+      "               _/_/_/_/                            \n"
+      "              _/                                 _/\n"
+      "             _/                                 _/ \n"
+      "            _/_/_/     _/_/    _/_/_/      _/_/_/  \n"
+      "           _/       _/_/_/_/  _/    _/  _/    _/   \n"
+      "          _/       _/        _/    _/  _/    _/    \n"
+      "         _/         _/_/_/  _/    _/    _/_/_/     \n"
+      "						          \n"
+      "                                                   \n"
+      "*********************************************************************\n"
+      "\n                                                 \n"
       << ENDL;
 
 
-    logger(INFO, BRIGHT_MAGENTA) << "Welcome to " << CryptoNote::CRYPTONOTE_NAME << " v" << PROJECT_VERSION_LONG;
+    logger(INFO, BRIGHT_WHITE) << " Welcome to Flat Earth Network's Decentralized P2P Blockchain " << " v" << PROJECT_VERSION_LONG;
 
     if (command_line_preprocessor(vm, logger)) {
       return 0;

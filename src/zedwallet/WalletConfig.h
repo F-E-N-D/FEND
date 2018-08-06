@@ -10,10 +10,10 @@
 namespace WalletConfig
 {
     /* The prefix your coins address starts with */
-    const std::string addressPrefix = "athena";
+    const std::string addressPrefix = "earth";
 
     /* Your coins 'Ticker', e.g. Monero = XMR, Bitcoin = BTC */
-    const std::string ticker = "ATHX";
+    const std::string ticker = "FEND";
 
     /* The filename to output the CSV to in save_csv */
     const std::string csvFilename = "transactions.csv";
@@ -23,7 +23,7 @@ namespace WalletConfig
     const std::string addressBookFilename = ".addressBook.json";
 
     /* The name of your deamon */
-    const std::string daemonName = "Athena";
+    const std::string daemonName = "FEND";
 
     /* The name to call this wallet */
     const std::string walletName = "wallet";
@@ -32,10 +32,10 @@ namespace WalletConfig
     const std::string walletdName = "services";
 
     /* The full name of your crypto */
-    const std::string coinName = "Athena";
+    const std::string coinName = "FEND";
 
     /* Where can your users contact you for support? E.g. discord */
-    const std::string contactLink = "http://chat.athx.org";
+    const std::string contactLink = "flatearthnetworks.org";
 
 
     /* The number of decimals your coin has */
@@ -44,10 +44,10 @@ namespace WalletConfig
 
 
     /* The length of a standard address for your coin */
-    const long unsigned int standardAddressLength = 101;
+    const long unsigned int standardAddressLength = 100;
 
     /* The length of an integrated address for your coin */
-    const long unsigned int integratedAddressLength = 238;
+    const long unsigned int integratedAddressLength = 237;
 
 
     /* The mixin value to use with transactions */
@@ -69,5 +69,5 @@ namespace WalletConfig
        fork height, or 0, if never allowed. This is ignored if a mixin of
        zero is allowed */
     const uint64_t mixinZeroDisabledHeight
-        = CryptoNote::parameters::MIXIN_LIMITS_V2_HEIGHT;
+        = CryptoNote::parameters::MIXIN_LIMITS_V1_HEIGHT;
 }
