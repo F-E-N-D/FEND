@@ -243,10 +243,10 @@ bool CryptoNoteProtocolHandler::process_payload_sync_data(const CORE_SYNC_DATA& 
     int64_t diff = static_cast<int64_t>(hshd.current_height) - static_cast<int64_t>(get_current_blockchain_height());
 
     logger(diff >= 0 ? (is_inital ? Logging::INFO : Logging::DEBUGGING) : Logging::TRACE, Logging::BRIGHT_MAGENTA) << context <<
-      "Your Athena node is syncing with the network. You are "
+      "Your FEND node is syncing with the network. You are "
       // << get_current_blockchain_height() << " -> " << hshd.current_height
       << std::abs(diff) << " blocks (" << std::abs(diff) / (24 * 60 * 60 / m_currency.difficultyTarget()) << " days) "
-      << (diff >= 0 ? std::string("behind") : std::string("ahead of")) << " the Hare. Slow and steady wins the race! " << std::endl;
+      << (diff >= 0 ? std::string("behind") : std::string("ahead of")) << " the Flat Earth Network Decentralized blockchain! " << std::endl;
 
     logger(Logging::DEBUGGING) << "Remote top block height: " << hshd.current_height << ", id: " << hshd.top_id;
     //let the socket to send response to handshake, but request callback, to let send request data after response
@@ -574,7 +574,7 @@ bool CryptoNoteProtocolHandler::request_missing_objects(CryptoNoteConnectionCont
     requestMissingPoolTransactions(context);
 
     context.m_state = CryptoNoteConnectionContext::state_normal;
-    logger(Logging::INFO, Logging::BRIGHT_MAGENTA) << context << "Successfully synchronized with the Athena Network.";
+    logger(Logging::INFO, Logging::BRIGHT_GREEN) << context << "Successfully synchronized with the FEND blockchain.";
     on_connection_synchronized();
   }
   return true;
@@ -585,26 +585,35 @@ bool CryptoNoteProtocolHandler::on_connection_synchronized() {
   if (m_synchronized.compare_exchange_strong(val_expected, true)) {
     logger(Logging::INFO)
       << ENDL ;
-          logger(INFO, BRIGHT_MAGENTA) <<
+          logger(INFO, BRIGHT_GREEN) <<
 "\n                                                                             \n"
-       "==============================================[ Athena Tip! ]================================================= \n"
-       " Always exit Athena and wallet with the \"exit\" command to preserve your chain and wallet data. \n"
+       "==============================================[ FEND Tip! ]================================================= \n"
+       " Always exit FEND and wallet with the \"exit\" command to preserve your chain and wallet data. \n"
        " Use the \"help\" command to see a list of available commands. \n"
        " Use the \"export_keys\" command in wallet to display your keys for restoring a corrupted wallet. \n"
-       " If you need more assistance, visit the #support channel in the Athena Discord Chat - https://chat.athx.org \n"
        "============================================================================================================== \n" << ENDL ;
 
-      logger(INFO, BRIGHT_MAGENTA) <<
+      logger(INFO, BRIGHT_RED) <<
 
       "\n                                                             \n"
       "\n                                                             \n"
-      "                 _/      _/                                    \n"
-      "      _/_/_/  _/_/_/_/  _/_/_/      _/_/    _/_/_/      _/_/_/ \n"
-      "   _/    _/    _/      _/    _/  _/_/_/_/  _/    _/  _/    _/  \n"
-      "  _/    _/    _/      _/    _/  _/        _/    _/  _/    _/   \n"
-      "   _/_/_/      _/_/  _/    _/    _/_/_/  _/    _/    _/_/_/    \n"
+      "             _/_/_/_/  _/_/_/_/  _/      _/  _/_/_/            \n"
+      "            _/        _/        _/_/    _/  _/    _/           \n"
+      "           _/_/_/    _/_/_/    _/  _/  _/  _/    _/            \n"
+      "          _/        _/        _/    _/_/  _/    _/             \n"
+      "         _/        _/_/_/_/  _/      _/  _/_/_/                \n"
+      "                                                               \n"
       "\n                                                             \n"
       "\n                                                             \n" << ENDL;
+
+
+
+
+
+
+
+
+
 
     m_observerManager.notify(&ICryptoNoteProtocolObserver::blockchainSynchronized, m_core.getTopBlockIndex());
   }

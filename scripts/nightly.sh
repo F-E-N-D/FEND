@@ -4,6 +4,7 @@
 # and put it inside a timestamped folder.
 # rock made this
 
+
 sourcefolder=~/Source/fend-dev-build-$(date +%F)
 
 mkdir ~/Source
@@ -19,7 +20,7 @@ mkdir -p $sourcefolder/build && cd $sourcefolder/build
 ls -al
 
 echo -e "\n BUILDING FEND"
-cmake .. && make -j8 # remove -j8 for single core
+cmake .. && make -j8 # replace -j8 with j4 single core
 cd src
 ls -al
 

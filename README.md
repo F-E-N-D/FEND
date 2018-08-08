@@ -7,7 +7,10 @@
 
 ####                                      Flat Earth Network's Decentralized P2P Blockchain
 
-Distributing and utilizing a new anonymous digital currency [ FEND ] (Flat Earth Network Dividend) as part of a fully functioning secure payment & transaction processing platform; powered by the people - for the people, outside of bank and government control. Allowing the masses to properly [ FEND ] for ourselves, while helping others find TRUTH by removing the veil of deception.
+Distributing and utilizing a new anonymous digital currency [ FEND ] (Flat Earth Network Dollar) as part of a fully functioning secure payment & transaction processing platform; powered by the people - for the people, outside of bank and government control. Allowing the masses to properly [ FEND ] for ourselves, while helping others find TRUTH by removing the veil of deception.
+
+
+
 
 ### How To Compile
 

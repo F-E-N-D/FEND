@@ -29,7 +29,7 @@ else(Readline_INCLUDE_DIR AND Readline_LIBRARY
 endif(Readline_INCLUDE_DIR AND Readline_LIBRARY 
   AND Ncurses_LIBRARY)
 
-# Hide these variables in cmake GUIs
+# Hide these variables in cmake GUIs 
 mark_as_advanced(
     Readline_ROOT_DIR
     Readline_INCLUDE_DIR
