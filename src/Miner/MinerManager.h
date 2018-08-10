@@ -28,6 +28,7 @@
 #include "MinerEvent.h"
 #include "MiningConfig.h"
 
+
 namespace System {
 class Dispatcher;
 }

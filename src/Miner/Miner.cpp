@@ -24,7 +24,7 @@
 #include "CryptoNoteCore/CryptoNoteFormatUtils.h"
 
 #include <System/InterruptedException.h>
-
+const std::string GREEN = "\x1F""GREEN\x1F";
 namespace CryptoNote {
 
 Miner::Miner(System::Dispatcher& dispatcher, Logging::ILogger& logger) :
@@ -74,7 +74,7 @@ void Miner::stop() {
 void Miner::runWorkers(BlockMiningParameters blockMiningParameters, size_t threadCount) {
   assert(threadCount > 0);
 
-  m_logger(Logging::INFO) << "Starting mining for difficulty " << blockMiningParameters.difficulty;
+  m_logger(Logging::DEBUGGING) << "Starting mining for difficulty " << blockMiningParameters.difficulty;
 
   try {
     blockMiningParameters.blockTemplate.nonce = Crypto::rand<uint32_t>();
@@ -105,7 +105,7 @@ void Miner::workerFunc(const BlockTemplate& blockTemplate, Difficulty difficulty
       CachedBlock cachedBlock(block);
       Crypto::Hash hash = cachedBlock.getBlockLongHash();
       if (check_hash(hash, difficulty)) {
-        m_logger(Logging::INFO) << "Found block for difficulty " << difficulty;
+        m_logger(Logging::INFO, GREEN) << "Found block for difficulty " << difficulty;
 
         if (!setStateBlockFound()) {
           m_logger(Logging::DEBUGGING) << "block is already found or mining stopped";

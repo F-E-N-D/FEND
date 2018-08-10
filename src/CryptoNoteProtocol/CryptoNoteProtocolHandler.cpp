@@ -242,7 +242,7 @@ bool CryptoNoteProtocolHandler::process_payload_sync_data(const CORE_SYNC_DATA& 
   } else {
     int64_t diff = static_cast<int64_t>(hshd.current_height) - static_cast<int64_t>(get_current_blockchain_height());
 
-    logger(diff >= 0 ? (is_inital ? Logging::INFO : Logging::DEBUGGING) : Logging::TRACE, Logging::BRIGHT_MAGENTA) << context <<
+    logger(diff >= 0 ? (is_inital ? Logging::INFO : Logging::DEBUGGING) : Logging::TRACE, Logging::BRIGHT_CYAN) << context <<
       "Your FEND node is syncing with the network. You are "
       // << get_current_blockchain_height() << " -> " << hshd.current_height
       << std::abs(diff) << " blocks (" << std::abs(diff) / (24 * 60 * 60 / m_currency.difficultyTarget()) << " days) "
@@ -585,7 +585,7 @@ bool CryptoNoteProtocolHandler::on_connection_synchronized() {
   if (m_synchronized.compare_exchange_strong(val_expected, true)) {
     logger(Logging::INFO)
       << ENDL ;
-          logger(INFO, BRIGHT_GREEN) <<
+          logger(INFO, BRIGHT_WHITE) <<
 "\n                                                                             \n"
        "==============================================[ FEND Tip! ]================================================= \n"
        " Always exit FEND and wallet with the \"exit\" command to preserve your chain and wallet data. \n"
@@ -593,22 +593,34 @@ bool CryptoNoteProtocolHandler::on_connection_synchronized() {
        " Use the \"export_keys\" command in wallet to display your keys for restoring a corrupted wallet. \n"
        "============================================================================================================== \n" << ENDL ;
 
-      logger(INFO, BRIGHT_RED) <<
-
-      "\n                                                             \n"
-      "\n                                                             \n"
-      "             _/_/_/_/  _/_/_/_/  _/      _/  _/_/_/            \n"
-      "            _/        _/        _/_/    _/  _/    _/           \n"
-      "           _/_/_/    _/_/_/    _/  _/  _/  _/    _/            \n"
-      "          _/        _/        _/    _/_/  _/    _/             \n"
-      "         _/        _/_/_/_/  _/      _/  _/_/_/                \n"
-      "                                                               \n"
-      "\n                                                             \n"
-      "\n                                                             \n" << ENDL;
-
-
-
-
+      logger(INFO, GREEN) <<
+"\n                                                                        \n"
+"                                                                          \n"
+"                                                                          \n"
+"                                                                          \n"
+"                                                                          \n"
+"                                                                          \n"
+"                                                                          \n"
+"  ||====================================================================||\n"
+"  ||//$//|/|/|/|/|/|/|/|/|/|/|/|/|/|/|/|/|/|/|/|/|/|/|/|/|/|/|/|/|/|/$/~||\n"
+"  ||(100)================| END THE FEDERAL RESERVE |===============(100)||\n"
+"  ||//$/                  --------========--------                  |$//||\n"
+"  ||<</     88888888b     88888888b      888888ba       888888ba     |>>||\n"
+"  ||>>|     88            88             88    `8b      88    `8b    |<<||\n"
+"  ||<<|    a88aaaa       a88aaaa         88     88      88     88    |>>||\n"
+"  ||>>|     88            88             88     88      88     88    |<<||\n"
+"  ||<<|     88            88             88     88      88    .8P    |>>||\n"
+"  ||>>|     dP            88888888P      dP     dP      8888888P     |<<||\n"
+"  ||<<|                   ________________________                   />>||\n"
+"  ||//$|             <NOT TO BE USED FOR NASA FUNDING>              /$//||\n"
+"  ||(100)================FLAT EARTH NETWORK DOLLAR=================(100)||\n"
+"  ||/~$//~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/~/$//||\n"
+"  ||====================================================================||\n"
+"\n                                                                        \n"
+"\n                                                                        \n"
+"\n                                                                        \n"
+"\n                                                                        \n"
+"\n                                                                        \n" << ENDL;
 
 
 
@@ -737,7 +749,7 @@ void CryptoNoteProtocolHandler::updateObservedHeight(uint32_t peerHeight, const 
     std::lock_guard<std::mutex> lock(m_blockchainHeightMutex);
     if (peerHeight > m_blockchainHeight) {
       m_blockchainHeight = peerHeight;
-      logger(Logging::INFO, Logging::BRIGHT_MAGENTA) << "New Top Block Detected: " << peerHeight;
+      logger(Logging::INFO, Logging::BRIGHT_CYAN) << "New Top Block Detected: " << peerHeight;
     }
   }
 

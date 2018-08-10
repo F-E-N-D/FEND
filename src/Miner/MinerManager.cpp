@@ -31,6 +31,7 @@
 #include "Rpc/CoreRpcServerCommandsDefinitions.h"
 #include "Rpc/CoreRpcServerErrorCodes.h"
 #include "Rpc/JsonRpc.h"
+#include "Logging/LoggerManager.h"
 
 using namespace CryptoNote;
 
@@ -82,9 +83,12 @@ MinerManager::MinerManager(System::Dispatcher& dispatcher, const CryptoNote::Min
 
 MinerManager::~MinerManager() {
 }
-
+const size_t threadCount= std::thread::hardware_concurrency();
+const std::string BRIGHT_CYAN = "\x1F""BRIGHT_CYAN\x1F";
+const std::string BRIGHT_GREEN = "\x1F""BRIGHT_GREEN\x1F";
 void MinerManager::start() {
-  m_logger(Logging::DEBUGGING) << "starting";
+  m_logger(Logging::INFO, BRIGHT_CYAN) << "Operation [FEND] Mining begins - using - " << threadCount <<" CPU threads.\n"
+"You are now powering The People's network and eligible for earning Flat Earth Network Dollars - God'spede... stay woke.\n";
 
   BlockMiningParameters params;
   for (;;) {
@@ -93,7 +97,7 @@ void MinerManager::start() {
     try {
       params = requestMiningParameters(m_dispatcher, m_config.daemonHost, m_config.daemonPort, m_config.miningAddress);
     } catch (ConnectException& e) {
-      m_logger(Logging::WARNING) << "Couldn't connect to daemon: " << e.what();
+      m_logger(Logging::WARNING) << "Could not connect to daemon- Make sure FENDd is also running: " << e.what();
       System::Timer timer(m_dispatcher);
       timer.sleep(std::chrono::seconds(m_config.scanPeriod));
       continue;
@@ -229,7 +233,7 @@ bool MinerManager::submitBlock(const BlockTemplate& minedBlock, const std::strin
     System::EventLock lk(m_httpEvent);
     JsonRpc::invokeJsonRpcCommand(client, "submitblock", request, response);
 
-    m_logger(Logging::INFO) << "Block has been successfully submitted. Block hash: " << Common::podToHex(cachedBlock.getBlockHash());
+    m_logger(Logging::INFO, BRIGHT_GREEN) << "Block has been successfully submitted. Block hash: " << Common::podToHex(cachedBlock.getBlockHash());
     return true;
   } catch (std::exception& e) {
     m_logger(Logging::WARNING) << "Couldn't submit block: " << Common::podToHex(cachedBlock.getBlockHash()) << ", reason: " << e.what();
@@ -258,7 +262,7 @@ BlockMiningParameters MinerManager::requestMiningParameters(System::Dispatcher& 
     params.difficulty = response.difficulty;
 
     if(!fromBinaryArray(params.blockTemplate, Common::fromHex(response.blocktemplate_blob))) {
-      throw std::runtime_error("Couldn't deserialize block template");
+      throw std::runtime_error("Could not deserialize block template");
     }
 
     m_logger(Logging::DEBUGGING) << "Requested block template with previous block hash: " << Common::podToHex(params.blockTemplate.previousBlockHash);

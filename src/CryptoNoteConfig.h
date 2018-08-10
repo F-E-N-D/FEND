@@ -51,30 +51,11 @@ static_assert(EMISSION_SPEED_FACTOR_V2 <= 8 * sizeof(uint64_t), "Bad EMISSION_SP
 
 const uint64_t SLOWER_EMISSION_HEIGHT                        = 90000000;
 
-/* Premine amount */
+
 const uint64_t GENESIS_BLOCK_REWARD                          = UINT64_C(0);
 
-/* How to generate a premine:
-
-* Compile your code
-
-* Run zedwallet, ignore that it can't connect to the daemon, and generate an
-  address. Save this and the keys somewhere safe.
-
-* Launch the daemon with these arguments:
---print-genesis-tx --genesis-block-reward-address <premine wallet address>
-
-For example:
-TurtleCoind --print-genesis-tx --genesis-block-reward-address TRTLv2Fyavy8CXG8BPEbNeCHFZ1fuDCYCZ3vW5H5LXN4K2M2MHUpTENip9bbavpHvvPwb4NDkBWrNgURAd5DB38FHXWZyoBh4wW
-
-* Take the hash printed, and replace it with the hash below in GENESIS_COINBASE_TX_HEX
-bl;ock 300
-* Recompile, setup your seed nodes, and start mining
-
-* You should see your premine appear in the previously generated wallet.
-
-*/
-const char     GENESIS_COINBASE_TX_HEX[]                     = "012801ff0001cef78502029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121016859ef32222075687eae9fdcbce093e06a64fd64690101c0e5129b52e96f6487";
+	/* "Launch" date 81018  */
+const char     GENESIS_COINBASE_TX_HEX[]                     = "012801ff0001cef78502029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd08807121012e14cab5466a24e0c239991102b2ec95eb71dbc84d2c2f5161070d995438aef0";
 
 const size_t   CRYPTONOTE_REWARD_BLOCKS_WINDOW               = 100;
 const size_t   CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE     = 100000; //size of block (bytes) after which reward for block calculated using block size

@@ -1,6 +1,9 @@
 ![image](https://shshab.weebly.com/uploads/2/2/7/7/22771692/editor/20150304070031-testflightnov2009-27km-small.jpeg?1488301207)
 -------------------------------
 
+# Genesis release begins 81018 (Aug 10 2018)
+
+
 
 
 #                                                         [  F.E.N.D. ]
@@ -8,6 +11,10 @@
 ####                                      Flat Earth Network's Decentralized P2P Blockchain
 
 Distributing and utilizing a new anonymous digital currency [ FEND ] (Flat Earth Network Dollar) as part of a fully functioning secure payment & transaction processing platform; powered by the people - for the people, outside of bank and government control. Allowing the masses to properly [ FEND ] for ourselves, while helping others find TRUTH by removing the veil of deception.
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+
 
 
 
@@ -93,3 +100,4 @@ Hi Athena contributor, thanks for forking and sending back Pull Requests. Extens
 
 // Please see the included LICENSE file for more information.
 ```
+
