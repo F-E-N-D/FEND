@@ -6,8 +6,6 @@
 
 
 
-
-
 #                                                         [  F.E.N.D. ]
 
 ####                                      Flat Earth Network's Decentralized P2P Blockchain
@@ -16,6 +14,7 @@ Distributing and utilizing a new anonymous digital currency [ FEND ] (Flat Earth
 
 
 ---------------------------------------------------------------------------------------------------------------------------------
+
 
 
 
