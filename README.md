@@ -1,19 +1,22 @@
 ![image](https://shshab.weebly.com/uploads/2/2/7/7/22771692/editor/20150304070031-testflightnov2009-27km-small.jpeg?1488301207)
 -------------------------------
 
-# Genesis release begins 81018 (Aug 10 2018)
+#### Genesis release begins 81018 (Aug 10 2018)
 
 
 
 
-#                                                         [  F.E.N.D. ]
+#                                                        [  F.E.N.D. ]
 
-####                                      Flat Earth Network's Decentralized P2P Blockchain
+##                                      Flat Earth Network's Decentralized P2P Blockchain
 
 Distributing and utilizing a new anonymous digital currency [ FEND ] (Flat Earth Network Dollar) as part of a fully functioning secure payment & transaction processing platform; powered by the people - for the people, outside of bank and government control. Allowing the masses to properly [ FEND ] for ourselves, while helping others find TRUTH by removing the veil of deception.
 
+----------------------------------------------------------------------------------------------------------------------------------------
 
----------------------------------------------------------------------------------------------------------------------------------
+[200 Proofs Earth Is Not A Spinning Ball](https://www.youtube.com/watch?v=EiBJBVBez_w)
+
+----------------------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -23,9 +26,7 @@ Distributing and utilizing a new anonymous digital currency [ FEND ] (Flat Earth
 
 ### How To Compile
 
-On Linux or Mac on a non standard architecture, and can't get GNU Readline installed?
 
-Disable it with `cmake .. -DFORCE_READLINE=FALSE`
 
 
 #### Linux
@@ -45,6 +46,12 @@ Disable it with `cmake .. -DFORCE_READLINE=FALSE`
 - `cmake ..`
 - `make`
 
+----------------------------------------------------------------------------------------------------------------------------------------
+On Linux or Mac on a non standard architecture, and can't get GNU Readline installed?
+
+Disable it with `cmake .. -DFORCE_READLINE=FALSE`
+
+----------------------------------------------------------------------------------------------------------------------------------------
 #### Apple
 
 ##### Prerequisites
