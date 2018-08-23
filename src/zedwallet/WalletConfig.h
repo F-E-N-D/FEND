@@ -44,7 +44,7 @@ namespace WalletConfig
 
 
     /* The length of a standard address for your coin */
-    const long unsigned int standardAddressLength = 100;
+    const long unsigned int standardAddressLength = 99;
 
     /* The length of an integrated address for your coin */
     const long unsigned int integratedAddressLength = 237;
