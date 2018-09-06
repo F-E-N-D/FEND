@@ -35,7 +35,7 @@ Distributing and utilizing a new anonymous digital currency [ FEND ] (Flat Earth
 
 - You will need the following packages: boost (1.55 or higher), rocksdb, cmake, git, gcc (4.9 or higher), g++ (4.9 or higher), make, GNU readline, and python. Most of these should already be installed on your system.
 - For example on Ubuntu: `sudo apt-get install -y build-essential python-dev gcc g++ git cmake libboost-all-dev librocksdb-dev libreadline-dev`
-- If you are using Ubuntu and your version of Ubuntu doesn't have librocksdb-dev, you can get it from a ppa instead:
+- If you are using Ubuntu and your version of Ubuntu doesn't have librocksdb-dev, you can get it from a ppa instead, example: `sudo add-apt-repository ppa:giskou/librocksdb` (Ubuntu Trusty)
 
 
 ##### Building
